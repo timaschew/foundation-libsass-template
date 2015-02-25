@@ -6,4 +6,5 @@ gulp.task('watch', function(callback) {
   gulp.watch(config.js.src, ['javascript']);
   gulp.watch(config.pages.src, ['copy']);
   gulp.watch(config.src+'/*.*', ['copy']);
+  gulp.watch(config.src+'/**/*.jade', ['jade']);
 });

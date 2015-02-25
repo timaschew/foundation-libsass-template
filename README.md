@@ -13,6 +13,7 @@ You'll need to have the following items installed before continuing.
 
 ```bash
 git clone git@github.com:zurb/foundation-libsass-template.git
+cd foundation-libsass-template
 npm install
 npm run bower-install
 npm run gulp
@@ -29,3 +30,4 @@ And you're set!
     * `js`: your javascript files, they will be concatenated with foundations file into app.js
     * `scss`: your custom app styles
     * `pages`: your html pages
+    * `templates: 'contains you jade templates'
