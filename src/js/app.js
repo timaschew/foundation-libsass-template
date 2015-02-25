@@ -8,5 +8,4 @@ jQuery.cookie
 Foundation
 */
 
-
 $(document).foundation();

@@ -2,6 +2,7 @@ var dest = './public';
 var src = './src';
 
 module.exports = {
+    navigation: src + '/pages/navigation.coffee',
     pages: {
         src: src + '/pages/**.html',
         dest: dest

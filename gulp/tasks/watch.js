@@ -7,4 +7,5 @@ gulp.task('watch', function(callback) {
   gulp.watch(config.pages.src, ['copy']);
   gulp.watch(config.src+'/*.*', ['copy']);
   gulp.watch(config.src+'/**/*.jade', ['jade']);
+  gulp.watch(config.navigation, ['jade']);
 });

@@ -2,64 +2,39 @@ nav.top-bar(data-topbar)
     ul.title-area
         li.name
           h1
-            a(href='#')
-              | Top Bar Title
+            a(href='#')= nav.title
         li.toggle-topbar.menu-icon
           a(href='#')
-            span menu
+            span= nav.mobileLink
 
       section.top-bar-section
         ul.right
-          li.divider
-          li.has-dropdown
-            a(href='#') Main Item 1
-            ul.dropdown
+          for mainObject in nav.menu
+            - mainKey = Object.keys(mainObject)[0]
+            li.divider
+            if typeof mainObject[mainKey] === 'string'
               li
-                label Section Name
+                a(href='#')= mainKey
+            else
               li.has-dropdown
-                a(href='#') Has Dropdown, Level 1
+                a(href='#')= mainKey
                 ul.dropdown
-                  li
-                    a(href='#') Dropdown Options
-                  li
-                    a(href='#') Dropdown Options
-                  li
-                    a(href='#') Level 2
-                  li
-                    a(href='#') Subdropdown Option
-                  li
-                    a(href='#') Subdropdown Option
-                  li
-                    a(href='#') Subdropdown Option
-              li
-                a(href='#') Dropdown Option
-              li
-                a(href='#') Dropdown Option
-              li.divider
-              li
-                label Section Name
-              li
-                a(href='#') Dropdown Option
-              li
-                a(href='#') Dropdown Option
-              li
-                a(href='#') Dropdown Option
-              li.divider
-              li
-                a(href='#') See all &rarr;
-          li.divider
-          li
-            a(href='#') Main Item 2
-          li.divider
-          li.has-dropdown
-            a(href='#') Main Item 3
-            ul.dropdown
-              li
-                a(href='#') Dropdown Option
-              li
-                a(href='#') Dropdown Option
-              li
-                a(href='#') Dropdown Option
-              li.divider
-              li
-                a(href='#') See all &rarr;
+                  for subObject in mainObject[mainKey]
+                    if typeof subObject !== 'string'
+                      - subKey = Object.keys(subObject)[0]
+                      if subKey === '_section'
+                        li
+                          label= subObject[subKey]
+                      else if subKey === '_divider'
+                        li.divider
+                      else if typeof subObject[subKey] === 'string'
+                        li
+                          a(href='#')= subKey
+                      else
+                        li.has-dropdown
+                          a(href='#')= subKey
+                          ul.dropdown
+                            for subSubObject in subObject[subKey]
+                              - subSubKey = Object.keys(subSubObject)[0]
+                              li
+                                a(href='#')= subSubKey
