@@ -8,12 +8,12 @@ html.no-js(lang="en")
         title Foundation
 
     block head-styles
-        link(rel="stylesheet", href="/css/app.css")
+        link(rel="stylesheet", href=urlPrefix + "/css/app.css")
     block head-scripts
-        script(src="/js/modernizr.js")
+        script(src=urlPrefix + "/js/modernizr.js")
 
   body
     block body
 
     block body-scripts
-    script(src="/js/app.js")
+    script(src=urlPrefix + "/js/app.js")

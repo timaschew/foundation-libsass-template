@@ -2,6 +2,7 @@ var dest = './public';
 var src = './src';
 
 module.exports = {
+    urlPrefix: process.env.PREFIX || '', // for isntance: '/foundation-libsass-template'
     navigation: src + '/pages/navigation.coffee',
     pages: {
         src: src + '/pages/**.html',

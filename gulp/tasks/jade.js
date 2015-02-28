@@ -11,7 +11,10 @@ gulp.task('jade', function () {
         ['./src/templates/**/*.jade',
         '!./src/templates/**/_*.jade']) 
         .pipe(jade({
-          locals: {nav: navigation},
+          locals: {
+            nav: navigation,
+            urlPrefix: config.urlPrefix
+        },
           pretty: true
         }))
     .pipe(gulp.dest(config.dest));
