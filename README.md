@@ -29,5 +29,5 @@ And you're set!
   * `src`: this directory contains your app files
     * `js`: your javascript files, they will be concatenated with foundations file into app.js
     * `scss`: your custom app styles
-    * `pages`: your html pages
-    * `templates: 'contains you jade templates'
+    * `pages`: menu structure, will generate the navigation
+    * `templates`: 'contains you jade templates'
