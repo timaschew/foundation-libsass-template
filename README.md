@@ -12,7 +12,7 @@ You'll need to have the following items installed before continuing.
 ## Quickstart
 
 ```bash
-git clone git@github.com:zurb/foundation-libsass-template.git
+git clone https://github.com/timaschew/foundation-libsass-template.git
 cd foundation-libsass-template
 npm install
 npm run bower-install
